@@ -1,4 +1,6 @@
 # # PWD should be the same directory is this file resides
+# Should be ran while 'sourced' into a venv with the punctual package installed
+
 
 $ScriptPath = split-path -parent $MyInvocation.MyCommand.Definition
 
