@@ -35,9 +35,10 @@ New-Item -Path $PuncPath -ItemType Directory
 Set-Location $PuncPath
 
 # Download the executable
-Invoke-WebRequest -Uri "https://github.com/camratchford/punctual-scheduler/releases/latest" -OutFile "$PuncPath\punctual.zip"
+Invoke-WebRequest -Uri "https://github.com/camratchford/punctual-scheduler/files/10593845/punc.zip" -OutFile "$PuncPath\punctual.zip"
 # Extract the zip file
 Expand-Archive -Path "$PuncPath\punctual.zip" -DestinationPath $PuncPath
+Remove-Item -Path "$PuncPath\punctual.zip"
 ```
 
 > ❗ The executable to run will be `$PuncPath\punc.exe`
