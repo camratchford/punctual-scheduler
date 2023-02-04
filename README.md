@@ -145,6 +145,8 @@ if __name__ == "__main__":
 
 Create the task file, located in: `$PuncPath\tasks.yml`
 
+The application will continue to check the contents of the tasks file to add/remove tasks without restarting it.
+
 > ❗ Information on format codes can be found in [Python's 'datetime' documentation](https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes)
 
 > ❗ The value of action -> name must be unique
@@ -152,9 +154,10 @@ Create the task file, located in: `$PuncPath\tasks.yml`
 ```yaml
 tasks:
   - name: Test task
+    state: 'present' # Set it to 'absent' if you'd like to stop and remove and running task.
     first_run:
       value: 09/19/22 13:55:26
-      format: '%m/%d/%y %H:%M:%S'
+      format: '%m/%d/%y %H:%M:%S' 
     frequency:
       value: 10
       format: '%S'
