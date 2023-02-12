@@ -27,9 +27,11 @@ def main(task_file: str):
                         t.get('first_run'), t.get('frequency'),
                         t.get('action'), t.get('toast')
                     )
+                    scheduler.manage_tasks(task)
                 except Exception as e:
+                    print(e)
                     logger.error(f"Could not generate task from inputs: {e}")
 
-                scheduler.manage_tasks(task)
+
 
         sleep(2)
